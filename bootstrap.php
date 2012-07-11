@@ -8,6 +8,7 @@ Autoloader::add_classes(array(
 	'Bootstrap\\Breadcrumbs'           => __DIR__.'/classes/breadcrumbs.php',
 	'Bootstrap\\Form'                  => __DIR__.'/classes/form.php',
 	'Bootstrap\\Pagination'            => __DIR__.'/classes/pagination.php',
+	'Bootstrap\\Validation_Error'      => __DIR__.'/classes/validation/error.php',
 	'Bootstrap\\Bootstrap_Addons_Twig' => __DIR__.'/classes/bootstrap/addons/twig.php',
 ));
 

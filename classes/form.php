@@ -19,7 +19,7 @@ class Form extends \Fuel\Core\Form
 			$attributes['class'] = 'btn '.$attributes['class'];
 		}
 
-		return static::$instance->button($field, $value, $attributes);
+		return parent::button($field, $value, $attributes);
 	}
 
 	public static function reset($field = 'reset', $value = 'Reset', array $attributes = array())
@@ -28,7 +28,7 @@ class Form extends \Fuel\Core\Form
 			$attributes['class'] = 'btn '.$attributes['class'];
 		}
 
-		return static::$instance->reset($field, $value, $attributes);
+		return parent::reset($field, $value, $attributes);
 	}
 
 	public static function submit($field = 'submit', $value = 'Submit', array $attributes = array())
@@ -37,6 +37,6 @@ class Form extends \Fuel\Core\Form
 			$attributes['class'] = 'btn '.$attributes['class'];
 		}
 		
-		return static::$instance->submit($field, $value, $attributes);
+		return parent::submit($field, $value, $attributes);
 	}
 }

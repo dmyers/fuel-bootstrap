@@ -24,7 +24,7 @@ Alternatively you can download it and extract it into `fuel/packages/bootstrap/`
 
 ## Usage
 
-Simply use Fuel's built in Assets (or [Casset](https://github.com/canton7/fuelphp-casset/)), Form, and Pagination classes as usual and they will use Twitter Bootstrap's css classnames for the styling. We have also included our own Alerts and Breadcrumbs classes with examples below.
+Simply use Fuel's built in Assets (or [Casset](https://github.com/canton7/fuelphp-casset/)), Form, Pagination, and Validation Errors classes as usual and they will use Twitter Bootstrap's css classnames for the styling. We have also included our own Alerts and Breadcrumbs classes with examples below.
 
 ```php
 Alerts::success('Well done! You successfully read this important alert message.');

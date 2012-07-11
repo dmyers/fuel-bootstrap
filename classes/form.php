@@ -17,6 +17,8 @@ class Form extends \Fuel\Core\Form
 	{
 		if (isset($attributes['class'])) {
 			$attributes['class'] = 'btn '.$attributes['class'];
+		} else {
+			$attributes['class'] = 'btn';
 		}
 
 		return parent::button($field, $value, $attributes);
@@ -26,6 +28,8 @@ class Form extends \Fuel\Core\Form
 	{
 		if (isset($attributes['class'])) {
 			$attributes['class'] = 'btn '.$attributes['class'];
+		} else {
+			$attributes['class'] = 'btn';
 		}
 
 		return parent::reset($field, $value, $attributes);
@@ -35,6 +39,8 @@ class Form extends \Fuel\Core\Form
 	{
 		if (isset($attributes['class'])) {
 			$attributes['class'] = 'btn '.$attributes['class'];
+		} else {
+			$attributes['class'] = 'btn';
 		}
 		
 		return parent::submit($field, $value, $attributes);

@@ -59,11 +59,11 @@ class Navigation
 	/**
 	 * renders the navigation
 	 *
-	 * @param	void
+	 * @param   array   array with tag attribute settings
 	 * @access	public
 	 * @return	void
 	 */
-	public static function render($type = 'default')
+	public static function render($type = 'default', array $attributes = array())
 	{
 		if (empty($type)) {
 			return;
@@ -72,6 +72,7 @@ class Navigation
 		$links = \Config::get('navigation.' . $type, false);
 
 		if (empty($links)) {
+			throw new BootstrapException('Missing navigation links in config');
 			return;
 		}
 
@@ -86,6 +87,12 @@ class Navigation
 			}
 		}
 
-		return \View::forge('navigation', array('links' => $links));
+		if (isset($attributes['class'])) {
+			$attributes['class'] = 'nav '.$attributes['class'];
+		} else {
+			$attributes['class'] = 'nav';
+		}
+
+		echo \View::forge('navigation', array('links' => $links, 'attributes' => array_to_attr($attributes)))->render();
 	}
 }

@@ -181,11 +181,11 @@ class Alerts
 	/**
 	 * renders the alerts
 	 *
-	 * @param	void
+	 * @param   array   array with tag attribute settings
 	 * @access	public
 	 * @return	void
 	 */
-	public static function render()
+	public static function render(array $attributes = array())
 	{
 		self::load();
 
@@ -193,6 +193,25 @@ class Alerts
 			return;
 		}
 
-		return \View::forge('alerts', array('alerts' => self::$alerts));
+		foreach (self::$alerts as $type => $alert) {
+			$alert_attributes = $attributes;
+			$class = 'alert';
+
+			if (count($alert) > 1) {
+				$class .= ' alert-block';
+			}
+
+			$class .= ' alert-'.$type;
+
+			if (isset($alert_attributes['class'])) {
+				$alert_attributes['class'] = $class.' '.$alert_attributes['class'];
+			} else {
+				$alert_attributes['class'] = $class;
+			}
+
+			$alert_attributes['data-dismiss'] = 'alert';
+
+			echo \View::forge('alerts', array('alert' => $alert, 'type' => $type, 'attributes' => array_to_attr($alert_attributes)))->render();
+		}
 	}
 }

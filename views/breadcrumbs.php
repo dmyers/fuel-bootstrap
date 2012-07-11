@@ -1,5 +1,5 @@
 <?php $total = count($links); ?>
-<ul class="breadcrumb">
+<ul <?php echo $attributes ?>>
 	<?php foreach ($links as $pos => $link) : ?>
 		<li<?php if ($link['active']) : ?> class="active"<?php endif; ?>>
 			<?php if ($link['url'] != false) : ?>

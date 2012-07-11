@@ -86,16 +86,22 @@ class Breadcrumbs
 	/**
 	 * renders the breadcrumbs
 	 *
-	 * @param	void
+	 * @param   array   array with tag attribute settings
 	 * @access	public
 	 * @return	void
 	 */
-	public static function render()
+	public static function render(array $attributes = array()))
 	{
 		if (empty(self::$breadcrumbs)) {
 			return;
 		}
 
-		return \View::forge('breadcrumbs.php', array('links' => self::$breadcrumbs));
+		if (isset($attributes['class'])) {
+			$attributes['class'] = 'breadcrumb '.$attributes['class'];
+		} else {
+			$attributes['class'] = 'breadcrumb';
+		}
+
+		echo \View::forge('breadcrumbs.php', array('links' => self::$breadcrumbs, 'attributes' => array_to_attr($attributes)))->render();
 	}
 }

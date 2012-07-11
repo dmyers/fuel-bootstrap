@@ -21,8 +21,10 @@ class Bootstrap
 		// See if Casset package is used.
 		if (\Package::loaded('casset')) {
 			\Casset::css('bootstrap.css');
+			\Casset::js('bootstrap.min.js');
 		} else {
-			\Asset::css('bootstrap.css');
+			\Asset::css('bootstrap.min.css');
+			\Asset::js('bootstrap.min.js');
 		}
 	}
 

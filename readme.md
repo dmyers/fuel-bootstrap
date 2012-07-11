@@ -1,6 +1,6 @@
-# Fuel AmazonS3 Package
+# Fuel Bootstrap Package
 
-A super simple AmazonS3 package for the Amazon's S3 PHP SDK for Fuel.
+A super simple [Twitter Bootstrap](http://twitter.github.com/bootstrap/) package for Fuel.
 
 ## About
 * Version: 1.0.0
@@ -12,33 +12,33 @@ A super simple AmazonS3 package for the Amazon's S3 PHP SDK for Fuel.
 
 If you are installing this as a submodule (recommended) in your git repo root, run this command:
 
-	$ git submodule add git://github.com/dmyers/fuel-amazons3.git fuel/packages/amazons3
+	$ git submodule add git://github.com/dmyers/fuel-bootstrap.git fuel/packages/bootstrap
 
 Then you you need to initialize and update the submodule:
 
-	$ git submodule update --init --recursive fuel/packages/amazons3/
+	$ git submodule update --init --recursive fuel/packages/bootstrap/
 
 ###Download
 
-Alternatively you can download it and extract it into `fuel/packages/amazons3/`.
+Alternatively you can download it and extract it into `fuel/packages/bootstrap/`.
 
 ## Usage
 
+Simply use Fuel's built in Assets (or [Casset](https://github.com/canton7/fuelphp-casset/)), Form, and Pagination classes as usual and they will use Twitter Bootstrap's css classnames for the styling. We have also included our own Alerts and Breadcrumbs classes with examples below.
+
 ```php
-$amazons3 = AmazonS3::instance();
-var_dump($amazons3->listBuckets());
+Alerts::success('Well done! You successfully read this important alert message.');
+Alerts::danger('Oh snap! Change a few things up and try submitting again.');
+Alerts::render();
+
+Breadcrumbs::add('/', 'Home');
+Breadcrumbs::add('library', 'Library');
+Breadcrumbs::active('Data');
+Breadcrumbs::render();
 ```
-
-For more examples, check out the [Amazon S3 PHP SDK](https://github.com/tpyo/amazon-s3-php-class).
-
-## Configuration
-
-Configuration is easy. First thing you will need to do is to [signup for Amazon Web Services](https://aws-portal.amazon.com/gp/aws/developer/registration/index.html) (if you haven't already).
-
-Next, copy the `config/amazons3.php` from the package up into your `app/config/` directory. Open it up and enter your API keys.
 
 ## Updates
 
 In order to keep the package up to date simply run:
 
-	$ git submodule update --recursive fuel/packages/amazons3/
+	$ git submodule update --recursive fuel/packages/bootstrap/

@@ -84,7 +84,7 @@ class Breadcrumbs
 	}
 
 	/**
-	 * renders the alerts
+	 * renders the breadcrumbs
 	 *
 	 * @param	void
 	 * @access	public

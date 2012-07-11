@@ -6,6 +6,7 @@ Autoloader::add_classes(array(
 	'Bootstrap\\Bootstrap'             => __DIR__.'/classes/bootstrap.php',
 	'Bootstrap\\Alerts'                => __DIR__.'/classes/alerts.php',
 	'Bootstrap\\Breadcrumbs'           => __DIR__.'/classes/breadcrumbs.php',
+	'Bootstrap\\Navigation'            => __DIR__.'/classes/navigation.php',
 	'Bootstrap\\Form'                  => __DIR__.'/classes/form.php',
 	'Bootstrap\\Pagination'            => __DIR__.'/classes/pagination.php',
 	'Bootstrap\\Validation_Error'      => __DIR__.'/classes/validation/error.php',

@@ -33,6 +33,7 @@ class Bootstrap_Addons_Twig extends \Twig_Extension
 		return array(
 			'render_alerts'      => new \Twig_Function_Function('Alerts::render'),
 			'render_breadcrumbs' => new \Twig_Function_Function('Breadcrumbs::render'),
+			'render_navigation'  => new \Twig_Function_Function('Navigation::render'),
 		);
 	}
 }

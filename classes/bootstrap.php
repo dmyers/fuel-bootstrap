@@ -26,7 +26,7 @@ class Bootstrap
 	 */
 	public static function init()
 	{
-		$autoload = \Config::get('bootstrap.path', false);
+		$autoload = \Config::get('bootstrap.autoload', false);
 
 		if (!$autoload) {
 			return;

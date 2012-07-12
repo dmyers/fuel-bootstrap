@@ -76,6 +76,12 @@ class Navigation
 			return;
 		}
 
+		$callback = \Config::get('bootstrap.navigation_links_callback', null);
+
+		if ($callback != null) {
+			$links = $callback($links);
+		}
+
 		foreach ($links as $key => &$link) {
 			if (empty($link['url'])) {
 				$link['url'] = \Inflector::friendly_title($link['title'], '-', true);

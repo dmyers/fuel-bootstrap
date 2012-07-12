@@ -26,4 +26,17 @@ return array(
 	 * use_min - Whether to load minified version.
 	 */
 	'use_min' => true,
+
+	/**
+	 * This config key specifies the name of a callback which is called before
+	 * rendering the navigation.
+	 * The callback allows you to overwrite / modify the links.
+	 *
+	 * This parameter expects a string, which is the name of a closure, with the
+	 * following prototype:
+	 * function($links)
+	 * and should return the links after being processed.
+	 * $links = the links for the navigation being rendered
+	 */
+	'navigation_links_callback' => null,
 );

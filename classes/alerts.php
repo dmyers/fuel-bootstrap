@@ -209,8 +209,6 @@ class Alerts
 				$alert_attributes['class'] = $class;
 			}
 
-			$alert_attributes['data-dismiss'] = 'alert';
-
 			echo \View::forge('alerts', array('alert' => $alert, 'type' => $type, 'attributes' => array_to_attr($alert_attributes)))->render();
 		}
 	}

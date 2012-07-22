@@ -18,12 +18,14 @@ return array(
 	 * Params:
 	 * 		title - title for the link
 	 * 		url - url for the link, title will be used if omitted (optional)
+	 *      class - class names to use for link, title will be used if omitted (optional)
 	 *      active - if the link should always be active (optional)
 	 */
 	'default' => array(
 		array(
 			'title' => 'Home',
 			'url'   => '/',
+			'class' => 'link',
 		),
 		array(
 			'title' => 'Link',

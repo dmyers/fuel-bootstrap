@@ -91,6 +91,10 @@ class Navigation
 			if (!isset($link['active'])) {
 				$link['active'] = ($link['url'] == ltrim(\Input::uri(), '/'));
 			}
+
+			if (!isset($link['class'])) {
+				$link['class'] = str_replace(' ', '', \Str::lower($link['title']));
+			}
 		}
 
 		if (isset($attributes['class'])) {

@@ -1,5 +1,5 @@
 <div <?php echo $attributes ?>>
-	<a href="javascript:void(0);" class="close">&times;</a>
+	<a href="javascript:void(0);" class="close" data-dismiss="alert">&times;</a>
 	
 	<?php if (count($alert) == 1) : ?>
 		<?php if ($type == 'success') : ?>

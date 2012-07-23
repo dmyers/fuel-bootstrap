@@ -63,7 +63,7 @@ class Navigation
 	 * @access	public
 	 * @return	void
 	 */
-	public static function render($type = 'default', array $attributes = array())
+	public static function render($type = 'default', array $attributes = array(), $header = false)
 	{
 		if (empty($type)) {
 			return;
@@ -103,6 +103,6 @@ class Navigation
 			$attributes['class'] = 'nav';
 		}
 
-		echo \View::forge('navigation', array('links' => $links, 'attributes' => array_to_attr($attributes)))->render();
+		echo \View::forge('navigation', array('header' => $header, 'links' => $links, 'attributes' => array_to_attr($attributes)))->render();
 	}
 }

@@ -31,6 +31,11 @@ class Alerts
 	public static $alerts = array();
 
 	/**
+	 * namespace name to store under for sessions
+	 */
+	public static $namespace = 'alerts';
+
+	/**
 	 * Returns a new Alerts object.
 	 *
 	 *     $alerts = Alerts::forge();
@@ -70,6 +75,7 @@ class Alerts
 	public static function load()
 	{
 		foreach (self::$types as $type) {
+			$session_key = self::$namespace.'.'.$type;
 			$type_alerts = \Session::get_flash($type);
 
 			if (!empty($type_alerts)) {
@@ -159,6 +165,7 @@ class Alerts
 		}
 
 		if ($flash) {
+			$session_key = self::$namespace.'.'.$type;
 			\Session::set_flash($type, $message);
 		} else {
 			self::$alerts[$type][] = $message;
@@ -209,7 +216,11 @@ class Alerts
 				$alert_attributes['class'] = $class;
 			}
 
-			echo \View::forge('alerts', array('alert' => $alert, 'type' => $type, 'attributes' => array_to_attr($alert_attributes)))->render();
+			echo \View::forge('alerts', array(
+				'type'       => $type,
+				'alert'      => $alert,
+				'attributes' => array_to_attr($alert_attributes)
+			))->render();
 		}
 	}
 }

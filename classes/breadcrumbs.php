@@ -90,7 +90,7 @@ class Breadcrumbs
 	 * @access	public
 	 * @return	void
 	 */
-	public static function render(array $attributes = array()))
+	public static function render(array $attributes = array())
 	{
 		if (empty(self::$breadcrumbs)) {
 			return;

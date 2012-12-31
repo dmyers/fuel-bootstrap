@@ -93,7 +93,7 @@ class Navigation
 			}
 
 			if (!isset($link['class'])) {
-				$link['class'] = str_replace(' ', '', \Str::lower($link['title']));
+				$link['class'] = \Inflector::friendly_title($link['title'], '-', true);
 			}
 		}
 

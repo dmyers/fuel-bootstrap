@@ -91,9 +91,27 @@ class Navigation
 			if (!isset($link['active'])) {
 				$link['active'] = ($link['url'] == ltrim(\Input::uri(), '/'));
 			}
+			
+			if (empty($link['attributes'])) {
+				$link['attributes'] = array();
+			}
 
-			if (!isset($link['class'])) {
-				$link['class'] = \Inflector::friendly_title($link['title'], '-', true);
+			$anchor_classs = \Config::get('bootstrap.navigation.anchor_class', true);
+
+			if ($anchor_classs) {
+				if (!isset($link['attributes']['class'])) {
+					$link['class'] = \Inflector::friendly_title($link['title'], '-', true);
+				}
+
+				$anchor_prefix = \Config::get('bootstrap.navigation.anchor_prefix', 'nav-');
+
+				if (!empty($anchor_prefix)) {
+					$link['class'] = $anchor_prefix . $link['class'];
+				}
+			}
+
+			if (!empty($link['class'])) {
+				$link['attributes']['class'] = $link['class'];
 			}
 		}
 
@@ -103,6 +121,10 @@ class Navigation
 			$attributes['class'] = 'nav';
 		}
 
-		echo \View::forge('navigation', array('header' => $header, 'links' => $links, 'attributes' => array_to_attr($attributes)))->render();
+		echo \View::forge('navigation', array(
+			'header'     => $header,
+			'links'      => $links,
+			'attributes' => array_to_attr($attributes),
+		))->render();
 	}
 }

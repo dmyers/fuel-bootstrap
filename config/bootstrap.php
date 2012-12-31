@@ -29,6 +29,18 @@ return array(
 		'use_min' => true,
 	),
 
+	'navigation' => array(
+		/**
+		 * anchor_class - Whether to generate classes for anchors.
+		 */
+		'anchor_class' => true,
+
+		/**
+		 * anchor_prefix - The prefix to use for anchor classes.
+		 */
+		'anchor_prefix' => 'nav-',
+	),
+
 	/**
 	 * This config key specifies the name of a callback which is called before
 	 * rendering the navigation.

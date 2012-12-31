@@ -10,22 +10,24 @@
  */
 
 return array(
-	/**
-	 * use_min - Whether to autoload bootstrap assets.
-	 */
-	'autoload' => true,
+	'assets' => array(
+		/**
+		 * use_min - Whether to autoload bootstrap assets.
+		 */
+		'autoload' => true,
 
-	/**
-	 * path - The path where bootstrap files are.
-	 *
-	 * Leave empty for main assets folder.
-	 */
-	'path' => '',
+		/**
+		 * path - The path where bootstrap files are.
+		 *
+		 * Leave empty for main assets folder.
+		 */
+		'path' => '',
 
-	/**
-	 * use_min - Whether to load minified version.
-	 */
-	'use_min' => true,
+		/**
+		 * use_min - Whether to load minified version.
+		 */
+		'use_min' => true,
+	),
 
 	/**
 	 * This config key specifies the name of a callback which is called before

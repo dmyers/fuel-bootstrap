@@ -26,14 +26,14 @@ class Bootstrap
 	 */
 	public static function init()
 	{
-		$autoload = \Config::get('bootstrap.autoload', false);
+		$autoload = \Config::get('bootstrap.assets.autoload', false);
 
 		if (!$autoload) {
 			return;
 		}
 
-		$path = \Config::get('bootstrap.path', '');
-		$use_min = \Config::get('bootstrap.use_min', true);
+		$path = \Config::get('bootstrap.assets.path', '');
+		$use_min = \Config::get('bootstrap.assets.use_min', true);
 
 		$css_file = $path.'bootstrap';
 		$js_file = $path.'bootstrap';
@@ -55,8 +55,6 @@ class Bootstrap
 			\Asset::js($js_file);
 		}
 	}
-
 }
 
-class BootstrapException extends \FuelException {
-}
+class BootstrapException extends \FuelException {}

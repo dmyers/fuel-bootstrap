@@ -4,6 +4,7 @@ A super simple [Twitter Bootstrap](http://twitter.github.com/bootstrap/) package
 
 ## About
 * Version: 1.0.0
+* License: MIT License
 * Author: Derek Myers
 
 ## Installation

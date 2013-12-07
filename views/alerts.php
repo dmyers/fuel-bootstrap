@@ -14,7 +14,7 @@
 	<?php else : ?>
 		<?php if ($type == 'error') : ?>
 			<p>
-				<strong>The following errors occured:</strong>
+				<strong>The following errors occurred:</strong>
 			</p>
 		<?php endif; ?>
 		

@@ -7,10 +7,8 @@
 		<?php elseif ($type == 'error') : ?>
 			<strong class="alert-heading">Problem!</strong>
 		<?php endif; ?>
-		
-		<p>
-			<?php echo implode('</p><p>', $alert) ?>
-		</p>
+		<br />
+		<?php echo $alert[0] ?>
 	<?php else : ?>
 		<?php if ($type == 'error') : ?>
 			<p>

@@ -51,8 +51,10 @@ class Bootstrap
 			\Casset::css($css_file, !$use_min);
 			\Casset::js($js_file, !$use_min);
 		} else {
-			\Asset::css($css_file);
-			\Asset::js($js_file);
+			try {
+				\Asset::css($css_file);
+				\Asset::js($js_file);
+			} catch (\FuelException $e) {}
 		}
 	}
 }

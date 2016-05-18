@@ -102,6 +102,6 @@ class Breadcrumbs
 			$attributes['class'] = 'breadcrumb';
 		}
 
-		echo \View::forge('breadcrumbs.php', array('links' => self::$breadcrumbs, 'attributes' => array_to_attr($attributes)))->render();
+		echo \View::forge('breadcrumbs', array('links' => self::$breadcrumbs, 'attributes' => array_to_attr($attributes)))->render();
 	}
 }

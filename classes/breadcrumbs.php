@@ -64,6 +64,10 @@ class Breadcrumbs
 	 */
 	public static function add($title, $url = false, $active = false)
 	{
+		if ($url == \URI::string()) {
+			$url = false;
+		}
+		
 		self::$breadcrumbs[] = array(
 			'title'  => $title,
 			'url'    => $url,

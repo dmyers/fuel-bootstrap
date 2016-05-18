@@ -114,11 +114,13 @@ class Navigation
 				$link['attributes']['class'] = $link['class'];
 			}
 		}
+		
+		$ul_prefix =  \Config::get('bootstrap.navigation.ul_prefix', 'nav');
 
 		if (isset($attributes['class'])) {
-			$attributes['class'] = 'nav '.$attributes['class'];
+			$attributes['class'] = $ul_prefix.' '.$attributes['class'];
 		} else {
-			$attributes['class'] = 'nav';
+			$attributes['class'] = $ul_prefix;
 		}
 
 		echo \View::forge('navigation', array(

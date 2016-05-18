@@ -31,6 +31,11 @@ return array(
 
 	'navigation' => array(
 		/**
+		 * ul_prefix - The prefix to use for the ul class.
+		 */
+		'ul_prefix' => 'nav',
+		
+		/**
 		 * anchor_class - Whether to generate classes for anchors.
 		 */
 		'anchor_class' => true,
